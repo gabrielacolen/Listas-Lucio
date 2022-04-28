@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int maior(int x, int y, int z);
+int maiorValor(int x, int y, int z);
+int leiaValor();
 
 int main()
 {
