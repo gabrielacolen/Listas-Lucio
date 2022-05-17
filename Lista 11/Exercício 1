@@ -1,1 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+void trocarPrimeiroUltimo(float A[], int tamanho);
+
+int main()
+{
+
+    float A[3];
+    A[0] = 0;
+    A[1] = 1;
+    A[2] = 2;
+
+    trocarPrimeiroUltimo(A, 3);
+    printf("%i \n%i", A[0], A[2]);
+
+    return 0;
+}
+
+void trocarPrimeiroUltimo(float A[], int tamanho){
+    float auxiliar = A[0];
+    A[0] = A[tamanho-1];
+    A[tamanho-1] = auxiliar;
+}
