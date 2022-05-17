@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+float somaArranjo (float A[], int tamanho);
+void leiaArranjo(float A[], int tamanho);
+void escrevaArranjo(float A[], int tamanho);
+
+int main()
+{
+    int tamanho = 5;
+    float A[tamanho];
+    leiaArranjo(A, tamanho);
+    escrevaArranjo(A, tamanho);
+    printf("\n\nResultado = %f", somaArranjo(A, tamanho));
+    return 0;
+}
+
+float somaArranjo (float A[], int tamanho){
+    float soma = 0;
+    for (int i=0; i<tamanho; i++){
+    soma += A[i];
+    }
+    return soma;
+}
+
+void leiaArranjo(float A[], int tamanho){
+    for(int i=0; i<tamanho; i++){
+        printf("\nDigite o valor: ");
+        scanf("%f", &A[i]);
+    }
+}
+
+void escrevaArranjo(float A[], int tamanho){
+    for(int i=0; i<tamanho; i++){
+        printf("\n A[%i] = %f", i, A[i]);
+    }
+}
