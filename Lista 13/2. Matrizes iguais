@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#define LIN 3
+#define COL 2
+
+void escreveMatriz(float M[][COL]){
+    for(int i=0; i<LIN; i++){
+        for(int j=0; j<COL; j++){
+            printf("\t%.1f", M[i][j]); // O numero de elementos da coluna deve ser estabelecido
+            // o uso do ".1" entre o "%f" é para limitar a quantidade de casas decimais
+        }
+        puts("\n");
+    }
+}
+
+void leiaMatriz(float M[][COL]){
+    for(int i=0; i<LIN; i++){
+        for(int j=0; j<COL; j++){
+            printf("\nM[%i][%i]: \n", i, j);
+            //puts é só string, pra usar variaveis precisa ser printf
+            scanf("%f", &M[i][j]);
+        }
+    }
+}
+
+bool seForIgual (float A[][COL], float B[][COL]){
+    bool igual = false;
+    int contador = 0;
+    int i = 0;
+    int j = 0;
+
+    while(i<LIN && !igual) {
+        if(A[i][j] == B[i][j]) igual = true;
+        j++;
+        if(j==COL){
+            j=0;
+            i++;
+        }
+    }
+    return igual;
+}
+
+int main()
+{
+    printf("Arranjos Bidimensionais - Matriz \n");
+    float M1[][COL] = {{5,6}, {7,8}, {9,10}}; //M[linha][coluna]
+
+    float M2[LIN][COL];
+    leiaMatriz(M2);
+
+    if(seForIgual(M1, M2)) puts("\nIgual");
+    else puts("\nDiferente");
+
+    return 0;
+
+}
