@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#define LIN 3
+#define COL 2
+
+void escreveMatriz(float M[][COL]){
+    for(int i=0; i<LIN; i++){
+        for(int j=0; j<COL; j++){
+            printf("\t%.1f", M[i][j]); // O numero de elementos da coluna deve ser estabelecido
+            // o uso do ".1" entre o "%f" é para limitar a quantidade de casas decimais
+        }
+        puts("\n");
+    }
+}
+
+void leiaMatriz(float M[][COL]){
+    for(int i=0; i<LIN; i++){
+        for(int j=0; j<COL; j++){
+            printf("\nM[%i][%i]: \n", i, j);
+            //puts é só string, pra usar variaveis precisa ser printf
+            scanf("%f", &M[i][j]);
+        }
+    }
+}
+
+float mediaMatriz(float M[][COL]){
+    float media, soma, contador;
+    soma = contador = 0;
+    for(int i=0; i<LIN; i++){
+        for(int j=0; j<COL; j++){
+            soma = soma+ M[i][j];
+            contador++;
+        }
+    }
+    media = soma/contador;
+    return media;
+}
+
+int maiorQueMedia (float M[][COL]){
+    int contador;
+    int media = mediaMatriz(M);
+    for(int i=0; i<LIN; i++){
+        for(int j=0; j<COL; j++){
+            if (M[i][j]> media) contador++;
+            }
+    }
+    return contador;
+
+}
+
+int main()
+{
+    printf("Arranjos Bidimensionais - Matriz \n");
+    float M1[][COL] = {{5,6}, {7,8}, {9,10}}; //M[linha][coluna]
+
+    float M2[LIN][COL];
+    //leiaMatriz(M2);
+
+    printf("\nMedia = %f", mediaMatriz(M1));
+    printf("\nQuantidade de numeros acima da media = %i\n", maiorQueMedia(M1));
+    return 0;
+
+}
