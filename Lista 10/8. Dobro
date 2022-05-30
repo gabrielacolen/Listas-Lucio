@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int dobro (int x){
+    int duble = 2*x;
+    return duble;
+}
+
+int main()
+{
+      int x=5;
+      printf("O dobro de %i", x);
+
+      int y = dobro(x);
+      printf(" eh igual a %i", y);
+
+      return 0;
+}
