@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fatorial (int a){
+    int fat = 1;
+    if (a>1){
+        fat = (a*fatorial(a-1));
+    }
+    return fat;
+
+}
+
+int potencia (int base, int pot){
+    int resultado = 1; //caso base
+    if(pot>=1){
+        resultado = (base*potencia(base, pot-1));
+    }
+    return resultado;
+}
+
+int fibonacci (int k){
+    int n=k;
+    int resultado = 1; //caso base
+    if(k>1){
+        resultado = fibonacci(n-1)+ fibonacci(n-2);
+    }
+    return resultado;
+
+}
+
+int main()
+{
+    //oi();
+    //printf("\n Fatorial = %i", fatorial(5));
+    //printf("\nResultado = %i", potencia(5, 3));
+    //printf("\n6 termo de fibonacci = %i", fibonacci(6));
+
+    return 0;
+}
+
