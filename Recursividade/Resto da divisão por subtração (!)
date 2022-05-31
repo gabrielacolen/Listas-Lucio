@@ -1,0 +1,27 @@
+//NÃO CONSEGUI DE MANEIRA RECURSIVA
+//Faça uma função recursiva que calcula o resto da divisão usando subtrações sucessivas
+
+int restoDivisao (int n, int d){
+    int resto;
+    while(n>d){
+        n = n - d;
+    }
+    if(n<d) resto = n;
+    return resto;
+}
+
+int leiaNumero (){
+    printf("\nDigite o numero -> ");
+    int i;
+    scanf("%i", &i);
+    return i;
+}
+int main(){
+    printf("\n\tRESTO DA DIVISAO");
+    printf("\nNumerador:");
+    int n = leiaNumero();
+    printf("\nDenominador:");
+    int d = leiaNumero();
+    printf("\n\tRESULTADO = %i", restoDivisao(n,d));
+    return 0;
+}
