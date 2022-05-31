@@ -1,0 +1,29 @@
+//Faça uma função recursiva que calcula a divisão usando subtrações sucessivas:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int divisao (int n, int d){
+    int c;
+    while(n>0){
+        n = n - d;
+        c = divisao(n,d)+1;
+    }
+    return c;
+}
+
+int leiaNumero (){
+    printf("\nDigite o numero -> ");
+    int i;
+    scanf("%i", &i);
+    return i;
+}
+int main(){
+    printf("\n\tDIVISAO");
+    printf("\nNumerador:");
+    int n = leiaNumero();
+    printf("\nDenominador:");
+    int d = leiaNumero();
+    printf("\n\tRESULTADO = %i", divisao(n,d));
+    return 0;
+}
