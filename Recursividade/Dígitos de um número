@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Quantidade de digitos = %i", quantidadeDigitos(10000000));
+    printf("\nQuantidade de digitos rec = %i", quantidadeDigitosRecursiva(10000000));
+    return 0;
+}
+int quantidadeDigitos (int n){
+    int contador = 0;
+    while (n>=1){
+        n = n/10.0;
+        contador ++;
+    }
+    return contador;
+}
+
+int quantidadeDigitosRecursiva(int n){
+    int contador = 1;
+    if (n>=10){
+        n = n/10.0;
+        contador = contador + quantidadeDigitosRecursiva(n);
+    }
+    return contador;
+}
