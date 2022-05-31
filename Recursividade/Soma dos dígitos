@@ -1,0 +1,27 @@
+//Faça uma função para encontrar a soma dos dígitos de um número usando recursão.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int calculoRecursivo (int i){
+    int soma, digito;
+    soma = 0;
+    while (i>0){
+        digito = i%10;
+        soma = calculoRecursivo+digito;
+        i = i/10;
+    }
+    return soma;
+}
+
+int leiaNumero (){
+    printf("\nCalculo da soma dos digitos de um numero\n\tDigite o numero -> ");
+    int i;
+    scanf("%i", &i);
+    return i;
+}
+int main(){
+    int i = leiaNumero();
+    printf("\n\tSoma = %i", calculo(i));
+    return 0;
+}
