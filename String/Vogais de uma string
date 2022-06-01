@@ -1,0 +1,27 @@
+//Faça um algoritmo para percorrer uma string e imprimir apenas as vogais.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void vogais (char A[]){
+    char vogal [] = "AEIOU"; //definindo as vogais como string
+    char letra [] = " ";
+    for(int i=0; i<strlen(A); i++){ // enquanto i for menor que o tamanho da string A
+        for(int j=0; j<5; j++){
+            if (A[i] == vogal[j]){ // se A[i] tiver tal vogal, coloque ela em "letra"
+                    //letra[j] = vogal[j]; //O que pensei: letra[1]='A', letra[2]='I' - return letra
+                     printf("%c ", A[i]); //dessa forma funcionou, com void!
+        }
+        }
+    }
+   // return letra;
+}
+int main()
+{
+    char palavra[] = "GABI";
+
+    printf("\n O nome %s tem as vogais -> ", palavra);
+    vogais(palavra);
+    return 0;
+}
