@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+int leiaNumero();
+bool verificarAprovacao (int nota);
+
+int main()
+{
+    printf("Aprovado? \n");
+    int numero = leiaNumero();
+    if(verificarAprovacao(numero)) printf("\nResultado = Aprovado");
+    else printf("\nResultado = Reprovado");
+    return 0;
+}
+
+int leiaNumero(){
+    int numero;
+    do{
+    printf("\nDigite a nota -> ");
+    scanf("%i", &numero);
+    if (numero<0) printf("\nDigite um valor positivo");
+    }while(numero<0);
+    return numero;
+}
+
+bool verificarAprovacao (int nota){
+    bool aprovado = true;
+    if(nota<60) aprovado = false;
+    return aprovado;
+}
