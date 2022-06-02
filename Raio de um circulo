@@ -5,7 +5,7 @@ int areaCirculo(int raio);
 
 int main()
 {
-    printf("Calculo da area de um circulo\n");
+    printf("Calculo da area de um circulo de raio inteiro e positivo\n");
     int numero = leiaNumero();
     printf("\nResultado = %i", areaCirculo(numero));
     return 0;
@@ -13,8 +13,11 @@ int main()
 
 int leiaNumero(){
     int numero;
+    do{
     printf("\nDigite o raio -> ");
     scanf("%i", &numero);
+    if (numero<0) printf("\nDigite um valor positivo");
+    }while(numero<0);
     return numero;
 }
 
