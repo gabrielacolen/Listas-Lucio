@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+int leiaNumero();
+int areaCirculo(int raio);
+
+int main()
+{
+    printf("Calculo da area de um circulo\n");
+    int numero = leiaNumero();
+    printf("\nResultado = %i", areaCirculo(numero));
+    return 0;
+}
+
+int leiaNumero(){
+    int numero;
+    printf("\nDigite o raio -> ");
+    scanf("%i", &numero);
+    return numero;
+}
+
+int areaCirculo(int raio){
+    int resultado;
+    resultado = 3.1415*raio*raio;
+    return resultado;
+}
