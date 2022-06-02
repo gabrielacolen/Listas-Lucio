@@ -1,0 +1,31 @@
+int leiaNumero();
+
+int main()
+{
+    printf("Maior divisor de um numero\n");
+    int numero = leiaNumero();
+    printf("\nResultado = %i", maiorDivisor(numero));
+    return 0;
+}
+
+int leiaNumero(){
+    int numero;
+    do{
+    printf("\nDigite o numero -> ");
+    scanf("%i", &numero);
+    if (numero<0) printf("\nDigite um valor positivo");
+    }while(numero<0);
+    return numero;
+}
+
+int maiorDivisor (int n){
+    int divisor = 1;
+    int maior = n/2;
+    if(n%2!=0){
+        while (divisor>=n/2) {
+            maior++;
+            if(n%divisor == 0) maior = divisor;
+        }
+    }
+        return maior;
+}
