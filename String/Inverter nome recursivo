@@ -1,0 +1,17 @@
+void inverteRecursivo (char A[], int i, int j){
+    int aux;
+    if(i<j){
+        aux = A[i];
+        A[i] = A[j];
+        A[j] = aux;
+        inverteRecursivo(A, i+1, j-1);
+    }
+}
+
+int main(){
+    char A[] = "GABRIELA";
+    int tamanho = strlen(A);
+    inverteRecursivo(A, 0, tamanho-1);
+    printf ("O reverso do nome GABRIELA = %s", A);
+    return 0;
+}
