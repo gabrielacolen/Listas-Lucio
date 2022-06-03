@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void inverteNome (char A[], int tamanho){
+    char aux;
+    int i, j;
+    for ( i=0, j=tamanho-1; i<tamanho/2; i++, j--){
+        aux = A[i];
+        A[i] = A[j];
+        A[j] = aux;
+    }
+}
+
+int main(){
+    char A[] = "GABRIELA";
+    int tamanho = strlen(A);
+    inverteNome(A, tamanho);
+    printf ("O reverso do nome GABRIELA = %s", A);
+    return 0;
+}
