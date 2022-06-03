@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int linhas;
+int colunas;
+
+float maiorAcimaDiagonal (float M[][colunas]){
+    puts("\n\n Acima da diagonal principal");
+    float maior = M[0][1];
+    if(linhas == colunas){
+        for(int i=0; i<linhas-1; i++){
+                printf("\n");
+            for (int j= i+1; j<colunas; j++){
+                printf("%8.1f ", M[i][j]);
+                if(M[i][j]> maior) maior = M[i][j];
+            }
+        }
+    }
+    else maior = 0;
+    return maior;
+}
+
+void leiaDimensao(){
+    puts("Linhas: ");
+    scanf("%i", &linhas);
+    puts("Colunas: ");
+    scanf("%i", &colunas);
+
+}
+
+void escreverMatriz(float M[][colunas]){
+    for(int i=0; i<linhas; i++){
+        for (int j=0; j<colunas; j++){
+
+                printf("  %8.1f ", M[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void preencherMatriz(float M[][colunas]){
+    int c = 0;
+    for(int i=0; i<linhas; i++){
+        for (int j=0; j<colunas; j++){
+            M[i][j] = c;
+            c++;
+        }
+    }
+}
+
+void leiaMatriz(float M[][colunas]){
+    for (int i=0; i<linhas; i++){
+        for (int j=0; j<colunas; j++){
+            printf("\nM[%i][%i] = ", i, j);
+            scanf("%f", &M[i][j]);
+        }
+    }
+}
+
+int main()
+{
+    printf("\t\tMATRIZ\n");
+    leiaDimensao();
+    float M[linhas][colunas];
+    preencherMatriz(M);
+    escreverMatriz(M);
+    float maior = maiorAcimaDiagonal(M);
+    printf("\n\nMaior = %f", maior);
+
+    return 0;
+}
