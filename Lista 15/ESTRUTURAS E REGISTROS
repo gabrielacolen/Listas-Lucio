@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int MAX = 3;
+
+struct Data{
+    int dia;
+    int mes;
+    int ano;
+}; //Criando o tipo
+
+typedef struct Data Data; //dando um apelido
+
+void cadastro (Data A[]){
+        for(int i=0; i<MAX; i++){
+            printf("\n\tAluno %i", i+1);
+            puts("\n Nascimento: [dia/mes/ano] ");
+            scanf("%i / %i / %i", &A[i].dia, &A[i].mes, &A[i].ano);
+    }
+}
+
+void pesquisa(Data A[]){
+    puts("\nDigite mes chave da pesquisa");
+    int mes;
+    scanf("%i", mes);
+    listaAniversariantes(A, mes);
+}
+
+void listaAniversariantes(Data A[], int mes){
+    for (int i=0; i<MAX; i++){
+        if (A[i].mes == mes){
+            printf("\n%i/%i/%i", A[i].dia, A[i].mes, A[i].ano);
+        }
+    }
+}
+
+int menu(){
+    printf("\n\t  MENU");
+    printf("\n\t1.Cadastrar\n\t2.Pesquisar ->");
+    int op;
+    scanf("%i", &op);
+    return op;
+}
+
+
+int main()
+{
+    Data A[MAX];
+    int op;
+    op = menu();
+    switch(op){
+        case 0: puts("Saindo\n");
+            break;
+        case 1: cadastro(A);
+        case 2: pesquisa (A);
+    }
+    return 0;
+}
