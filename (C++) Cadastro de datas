@@ -1,0 +1,81 @@
+#include <iostream>
+
+using namespace std;
+
+int MAX;
+
+class Data {
+	private:
+        int dia;
+        int mes;
+        int ano;
+
+	public:
+		void setDia (int dia){
+			this -> dia = dia;
+        }
+        
+        void setMes (int mes){
+			this -> mes = mes;
+        }
+        
+        void setAno (int ano){
+			this -> ano = ano;
+        }
+
+		int getDia (){
+			return this -> dia;
+        }
+        
+        void setData(int dia, int mes, int ano){
+            setDia(dia);
+            setMes(mes);
+            setAno(ano); 
+            //por definição também é corrente, implicitamente sobre o mesmo objeto
+            //se quiser explicitar pode usar:
+            //this -> setDia(dia);
+        }
+        
+        void lerData(){
+            int numero;
+            scanf("%i", &numero);
+        }
+            
+        void cadastroData(){
+            for(int i=0; i<MAX; i++){
+                
+            }
+        }
+        
+
+};
+
+int menu(){
+    printf("\n\t   MENU");
+    printf("\n\t0. Sair");
+    printf("\n\t1. Cadastrar Data");
+    printf("\n\t2. Listar Datas");
+    
+}
+
+void lerQuantidade(){
+    scanf("%i", &MAX);
+}
+
+
+int main(){
+	Data D;
+	D.setDia(17);
+    int op = menu();
+    lerQuantidade();
+    
+    switch(op) {
+        case 0: printf("\nSaindo...");
+            break;
+        case 1: 
+            break;
+        case 2: 
+            
+    }
+    return 0;
+}
