@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+const int TAM = 2;
+
+struct Retangulo{
+    float base;
+    float altura;
+};
+
+void leiaRetangulos(Retangulo retangulo[]){
+  float base, altura;
+    for (int i=0; i<TAM; i++){
+      printf("\nRetangulo %i", i+1);
+        printf("\nDigite a base: ");
+        scanf("%f", &base);
+        printf("\nDigite a altura: ");
+        scanf("%f", &altura);
+    }
+}
+
+void escrevaRetangulos(Retangulo retangulo[]){
+  for (int i=0; i<TAM; i++){
+    printf("\nRetangulo %i: \n\t%f", i+1, base.retangulo[i]); //erro
+  }
+}
+
+int main()
+{
+    Retangulo retangulo[TAM];
+    leiaRetangulos(retangulo);
+    escrevaRetangulos(retangulo);
+    return 0;
+}
