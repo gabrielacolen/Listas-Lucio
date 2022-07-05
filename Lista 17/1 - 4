@@ -1,0 +1,64 @@
+#include <iostream>
+
+using namespace std;
+
+const int TAM = 3;
+
+//Para transformar em ponteiro você deve usar um * na hora de declarar o arranjo e usar -> em vez de .
+struct Retangulo {
+     float base;
+     float altura;
+};
+
+void leiaRetangulos (Retangulo retangulo[]){
+    for (int i=0; i<TAM; i++){
+        printf("\nRetangulo %i", i+1);
+        printf("\n Base: ");
+        scanf("%f", &retangulo[i].base);
+        printf(" Altura: ");
+        scanf("%f", &retangulo[i].altura);
+    }
+}
+
+
+void escrevaRetangulos(Retangulo retangulo[]){
+    for (int i=0; i<TAM; i++){
+        printf("\n Retangulo %i \n  base: %0.1f, altura: %0.1f", i+1, retangulo[i].base, retangulo[i].altura);
+    }
+}
+
+void listarAreas(Retangulo retangulo[]){
+    float area = 0;
+    puts(" ");
+    for (int i=0; i<TAM; i++){
+        area = retangulo[i].base * retangulo[i].altura;
+        printf("\n Area %i = %0.1f", i+1, area);
+    }
+}
+
+float somaAreaIterativa(Retangulo retangulo[]){
+    float soma = 0;
+    for(int i=0; i<TAM; i++){
+        soma = soma + (retangulo[i].base * retangulo[i].altura);
+    }
+    return soma;
+}
+
+float somaAreaRecursiva(Retangulo retangulo[], int tamanho){
+    float soma = 0;
+    if(tamanho>=0){
+        soma = somaAreaRecursiva(retangulo, tamanho-1) + (retangulo[tamanho-1].base * retangulo[tamanho-1].altura);
+    }
+    return soma;
+}
+
+int main() {
+    Retangulo retangulo[TAM];
+
+    leiaRetangulos(retangulo);
+    escrevaRetangulos(retangulo);
+    listarAreas(retangulo);
+    printf("\n\n Soma Iterativa = %0.1f", somaAreaIterativa(retangulo));
+    printf("\n\n Soma Recursiva = %0.1f", somaAreaRecursiva(retangulo, TAM));
+
+}
